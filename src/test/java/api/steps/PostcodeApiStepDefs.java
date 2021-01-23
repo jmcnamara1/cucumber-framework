@@ -9,7 +9,12 @@ import io.cucumber.java.en.Then;
 
 public class PostcodeApiStepDefs {
 
-    private PostcodeApiActions postcodeApiActions = new PostcodeApiActions();
+    private PostcodeApiActions postcodeApiActions;
+
+    public PostcodeApiStepDefs() {
+        this.postcodeApiActions = new PostcodeApiActions();
+    }
+
 
     @Given("I send a post request to postcode.io to search for the following postcodes")
     public void iSendAPostRequestToPostcodeIoToSearchForTheFollowingPostcodes(List<String> postcodes) {
