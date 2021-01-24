@@ -17,6 +17,7 @@
         <maven.surefire.version>2.22.2</maven.surefire.version>
         <restAssured.version>4.3.3</restAssured.version>
         <logback.version>1.7.30</logback.version>
+        <picocontainer.version>6.8.1</picocontainer.version>
     </properties>
 
     <dependencies>
@@ -26,11 +27,18 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber pico container - dependency injection framework to enable shared session variables       -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>6.8.1</version>
             <scope>test</scope>
         </dependency>
 

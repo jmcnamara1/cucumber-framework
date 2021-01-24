@@ -8,13 +8,19 @@ import org.junit.Assert;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import models.SessionData;
 import utils.PropertyUtils;
 
 import static utils.Constants.JSON_CONTENT_TYPE_HEADER;
 
 public class PostcodeApiActions {
 
+    private SessionData sessionData;
     private Response response;
+
+    public PostcodeApiActions(SessionData sessionData) {
+        this.sessionData = sessionData;
+    }
 
     // POST request
     public void sendAPostRequestToPostcodeIoForMultiplePostcodes(List<String> postcodes) {
@@ -33,6 +39,7 @@ public class PostcodeApiActions {
                 RestAssured.given()
                         .when()
                         .get(PropertyUtils.getPostCodeIoUrl() + postcode));
+        sessionData.setApiResponse(getResponse());
     }
 
     // Checks the response code is of value "code"

@@ -5,8 +5,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = "@exampleTest",
-        features = "classpath:features/Postcodes.feature",
+        tags = "@test",
+        features = "classpath:features/SharedState.feature",
         glue = {"api.steps"},
         plugin = { "pretty", "html:target/cucumber-report.html"}
 

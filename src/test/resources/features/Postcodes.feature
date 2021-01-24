@@ -1,4 +1,4 @@
-@exampleTest
+@test
 Feature: A an example feature file - sending calls to https://api.postcodes.io/postcodes
 
 
@@ -17,6 +17,6 @@ Feature: A an example feature file - sending calls to https://api.postcodes.io/p
 
     Examples:
       | postCode | region          |
-#      | MK454AE  | East of England |
-#      | B147AN   | West Midlands   |
+      | MK454AE  | East of England |
+      | B147AN   | West Midlands   |
       | EX230LT  | South West      |

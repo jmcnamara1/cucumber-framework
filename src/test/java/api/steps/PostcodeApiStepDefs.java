@@ -6,13 +6,17 @@ import api.actions.PostcodeApiActions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import models.SessionData;
 
 public class PostcodeApiStepDefs {
 
+    private SessionData sessionData;
     private PostcodeApiActions postcodeApiActions;
 
-    public PostcodeApiStepDefs() {
-        this.postcodeApiActions = new PostcodeApiActions();
+    public PostcodeApiStepDefs(SessionData sessionData) {
+        // Dependency is injected by pico container
+        this.sessionData = sessionData;
+        this.postcodeApiActions = new PostcodeApiActions(this.sessionData);
     }
 
 
@@ -35,4 +39,5 @@ public class PostcodeApiStepDefs {
     public void iCheckTheFieldHasTheCorrectValueOf(String field, String value) {
         postcodeApiActions.checkFieldInResponseHasTheCorrectValue(field, value);
     }
+
 }
